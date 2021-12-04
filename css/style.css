@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: url(../assets/screen.jpg) no-repeat fixed center/cover;
+}
+
+#container {
+  height: 600px;
+  width: 95%;
+  border: 2px solid purple;
+  position: relative;
+  overflow: hidden;
+  background: url(../assets/background.jpg) no-repeat fixed center/cover;
+}
+
+#container #dino {
+  height: 90px;
+  width: 110px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+#container #dino img {
+  height: 90px;
+  width: 110px;
+}
+
+.dinoActive {
+  animation: animateDino 0.5s linear infinite;
+}
+
+@keyframes animateDino {
+  0%,
+  100% {
+    bottom: 28px;
+  }
+
+  45%,
+  55% {
+    bottom: 190px;
+  }
+}
+
+#container #block {
+  height: 80px;
+  width: 50px;
+  position: absolute;
+  z-index: 100;
+  bottom: 20px;
+  right: -20px;
+}
+
+#container #block img {
+  height: 80px;
+  width: 50px;
+}
+
+.blockActive {
+  animation: blockAnimate 2s linear infinite;
+}
+
+@keyframes blockAnimate {
+  0% {
+    right: -125px;
+  }
+
+  100% {
+    right: 100%;
+  }
+}
+
+#container #road {
+  height: 30px;
+  width: 1200px;
+  position: absolute;
+  bottom: 0;
+}
+#container #road > img {
+  width: 2800px;
+}
+
+#container #road img {
+  height: 30px;
+  width: 2000px;
+  position: absolute;
+  left: 0;
+  animation: none;
+}
+
+#container #cloud {
+  height: 300px;
+  width: 800px;
+  border-radius: 40px;
+  position: absolute;
+  top: 30px;
+}
+
+#container #cloud img {
+  height: 300px;
+  width: 800px;
+  position: absolute;
+  left: -800px;
+  animation: none;
+}
+
+@keyframes cloudAnimate {
+  0% {
+    left: 200%;
+  }
+
+  100% {
+    left: -800px;
+  }
+}
+
+#score {
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-family: VT323;
+  font-size: 24px;
+}
+#highscore {
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-family: VT323;
+  font-size: 24px;
+}
+
+#gameOver {
+  display: none;
+  font-family: VT323;
+  font-size: 70px;
+  position: absolute;
+  left: calc(50% - 140px);
+  top: calc(50% - 40px);
+  width: 362px;
+  height: 80px;
+  color: white;
+  text-shadow: 1px 1px grey;
+}
